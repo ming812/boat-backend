@@ -1,6 +1,7 @@
 package com.example.demo.repository;
 
 import com.example.demo.entity.Product;
+import com.example.demo.entity.ProductImage;
 import com.example.demo.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -14,3 +15,4 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
 
     Optional<Product> findByCategory(String category);
 }
+

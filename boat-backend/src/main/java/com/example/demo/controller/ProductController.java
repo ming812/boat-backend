@@ -20,7 +20,7 @@ public class ProductController {
     @PostMapping("/upload")
     public ResponseEntity<String> uploadProduct(
             @RequestParam("userId") String userId,
-            @ModelAttribute ProductDto productDto){
+            @RequestBody ProductDto productDto){
 
         return ResponseEntity.ok(productService.uploadProduct(Long.parseLong(userId) , productDto));
 

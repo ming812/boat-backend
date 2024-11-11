@@ -1,11 +1,11 @@
 package com.example.demo.entity;
 
+import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.web.multipart.MultipartFile;
 
 import java.util.Date;
 import java.util.List;
@@ -15,29 +15,27 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "product")
-public class Product {
+@Table(name = "product_image")
+public class ProductImage {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name= "product_id")
     private Long productId;
 
-    @Column(name = "product_name")
-    private String productName;
+    @Column(name = "main_image")
+    private String mainImage;
 
-    @Column(name = "price")
-    private String price;
+    @Nullable
+    @Column(name = "sub_image_1")
+    private String subImage;
 
-    @Column(name = "discount")
-    private String discount;
+    @Nullable
+    @Column(name = "sub_image_2")
+    private String subImage2;
 
-    @Column(name = "category")
-    private String category;
-
-    @Column(name = "qty")
-    private String qty;
-
-    @Column(name = "description")
-    private String description;
+    @Nullable
+    @Column(name = "sub_image_3")
+    private String subImage3;
 
     @Column(name = "create_user")
     private String createUser;
@@ -50,5 +48,4 @@ public class Product {
 
     @Column(name = "last_modified_time")
     private Date lastModifiedTime;
-
 }
